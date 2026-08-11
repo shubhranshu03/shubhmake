@@ -116,7 +116,7 @@ export default function About() {
             </p>
 
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#1d1d1f] font-normal leading-relaxed opacity-95 mb-6">
-              I didn't stop. I started applying directly, LinkedIn, Naukri, anywhere I could submit a resume. Silence, for close to two months. No interview calls, nothing. Then, finally, one came through. I interviewed, and I cracked a role as a Full Stack Developer.
+              I didn't stop. I started applying directly, LinkedIn, Naukri, anywhere I could submit a resume. Silence, for close to two months. No interview calls, nothing. Then, finally, one came through. I interviewed, and I cracked a role as a <span className="underline decoration-[#c84b2f] decoration-2 underline-offset-4">Full Stack Developer</span>.
             </p>
 
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#1d1d1f] font-normal leading-relaxed opacity-95 mb-6">
@@ -132,11 +132,11 @@ export default function About() {
             </p>
 
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#1d1d1f] font-normal leading-relaxed opacity-95 mb-6">
-              So I stepped fully into what I now think of as my builder era. Since then I've built more than 20 projects. Most of them failed. Some never got past the first version. A few never got users at all. But every single one taught me something the successful ones alone never could have, and I'm still very much in that process today, still building, still failing sometimes, still learning from each attempt.
+              So I stepped fully into what I now think of as my <span className="underline decoration-[#c84b2f] decoration-2 underline-offset-4">builder era</span>. Since then I've built more than 20 projects. Most of them failed. Some never got past the first version. A few never got users at all. But every single one taught me something the successful ones alone never could have, and I'm still very much in that process today, still building, still failing sometimes, still learning from each attempt.
             </p>
 
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#1d1d1f] font-normal leading-relaxed opacity-95 mb-6">
-              If you're wondering what I actually want out of all this, it's simple. I want to become a genuinely good person, someone worth trusting and worth knowing. I want real peace in my life, not just the appearance of having things together. And yes, honestly, I want to build enough that money stops being something I have to worry about every month.
+              If you're wondering what I actually want out of all this, it's simple. I want to become a <span className="underline decoration-[#c84b2f] decoration-2 underline-offset-4">genuinely good person</span>, someone worth trusting and worth knowing. I want real peace in my life, not just the appearance of having things together. And yes, honestly, I want to build enough that money stops being something I have to worry about every month.
             </p>
 
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#1d1d1f] font-normal leading-relaxed opacity-95">

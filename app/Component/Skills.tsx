@@ -36,9 +36,26 @@ export default function Skills() {
               Hey, I'm Shubhranshu.
             </h1>
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#6e6e73] font-normal mt-2">
-              Full Stack Developer
+              On-Brand Content Writer
             </p>
           </div>
+        </div>
+
+        {/* Copy skill.md Button */}
+        <div className="flex justify-start">
+          <button 
+            onClick={() => {
+              navigator.clipboard.writeText('skill.md content here'); // You can replace this with actual skill.md content
+              alert('Copied to clipboard!');
+            }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-[#c84b2f] text-white text-sm font-medium rounded-lg hover:bg-[#b33d26] transition-colors duration-200"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+            </svg>
+            Copy skill.md
+          </button>
         </div>
 
         {/* Skills Header */}

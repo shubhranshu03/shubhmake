@@ -168,14 +168,14 @@ export default function SkillsPage() {
                   {skill.number}
                 </span>
 
-                {/* Title + copy button */}
-                <div className="flex items-start justify-between gap-4">
-                  <h2 className="font-sans font-bold text-[20px] text-[#1d1d1f] tracking-tight leading-snug">
-                    {skill.title}
-                  </h2>
-                  <div className="flex-shrink-0">
-                    <CopyButton content={skill.content} color="#c84b2f" />
-                  </div>
+                {/* Title */}
+                <h2 className="font-sans font-bold text-[16px] sm:text-[18px] md:text-[20px] text-[#1d1d1f] tracking-tight leading-snug">
+                  {skill.title}
+                </h2>
+
+                {/* Copy button */}
+                <div className="flex justify-start">
+                  <CopyButton content={skill.content} color="#c84b2f" />
                 </div>
 
               </div>
