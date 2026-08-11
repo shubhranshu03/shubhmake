@@ -538,7 +538,7 @@ export default function Home() {
                 </div>
                 <button
                   type="submit"
-                  className="group w-full bg-[#1d1d1f]/8 hover:bg-[#c84b2f] text-[#1d1d1f] hover:text-white px-6 py-3 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2"
+                  className="group w-full bg-[#1d1d1f]/8 hover:bg-[#c84b2f] text-[#1d1d1f] hover:text-white px-6 py-3 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 font-montserrat"
                 >
                   Send Message
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
