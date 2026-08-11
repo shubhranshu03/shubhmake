@@ -17,7 +17,7 @@ export default function About() {
             <a href="/about" className="text-[#1d1d1f] transition-colors cursor-pointer">About</a>
           </li>
           <li>
-            <a href="#" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors cursor-pointer">Components</a>
+            <a href="#" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors cursor-pointer">Skills</a>
           </li>
         </ul>
       </nav>

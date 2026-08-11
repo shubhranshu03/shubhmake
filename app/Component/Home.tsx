@@ -161,7 +161,7 @@ export default function Home() {
             <a href="/about" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors cursor-pointer">About</a>
           </li>
           <li>
-            <a href="#" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors cursor-pointer">Components</a>
+            <a href="/skills" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors cursor-pointer">Skills</a>
           </li>
         </ul>
       </nav>
@@ -197,17 +197,19 @@ export default function Home() {
 
         {/* Tech Stack */}
         <div className="space-y-4">
-          <p className="text-sm sm:text-base font-bold uppercase tracking-[0.2em] text-[#6e6e73] font-montserrat">Tech Stack</p>
+          <p className="text-sm sm:text-base font-bold uppercase tracking-[0.2em] text-[#c84b2f] font-montserrat">Tech Stack</p>
           <div className="grid grid-cols-4 gap-1 sm:flex sm:flex-wrap sm:items-center sm:gap-3 md:gap-4">
             {[
               { src: "/a1 (1).png", alt: "TypeScript" },
               { src: "/a1 (2).png", alt: "JavaScript" },
+              { src: "/github1.png", alt: "GitHub New" },
+              { src: "/git1.png", alt: "Git New" },
               { src: "/a1 (3).png", alt: "React" },
               { src: "/a1 (4).png", alt: "Next.js" },
               { src: "/a1 (5).png", alt: "Tailwind CSS" },
               { src: "/a1 (6).png", alt: "Node.js" },
-              { src: "/a1 (7).png", alt: "Git" },
-              { src: "/a1 (8).png", alt: "GitHub" },
+              { src: "/a1 (7).png", alt: "Git Original" },
+              { src: "/a1 (8).png", alt: "GitHub Original" },
               { src: "/a1 (9).png", alt: "MongoDB" },
               { src: "/a1 (10).png", alt: "Supabase" },
             ].map((tech) => (
@@ -362,7 +364,7 @@ export default function Home() {
             <nav className="flex items-center gap-6">
               <a href="#" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">About</a>
               <a href="#" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Services</a>
-              <a href="#" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Components</a>
+              <a href="#" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Skills</a>
             </nav>
           </div>
 
