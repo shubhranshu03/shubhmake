@@ -17,7 +17,7 @@ export default function About() {
             <a href="/about" className="text-[#1d1d1f] transition-colors cursor-pointer">About</a>
           </li>
           <li>
-            <a href="#" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors cursor-pointer">Skills</a>
+            <a href="/skills" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors cursor-pointer">Skills</a>
           </li>
         </ul>
       </nav>
@@ -33,7 +33,7 @@ export default function About() {
           {/* Name and Title */}
           <div className="flex flex-col justify-center">
             <h1 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-[#1d1d1f] leading-[1.1]">
-              Hey, I'm Shubhranshu.
+              Hey, I'm <span className="underline decoration-[#c84b2f] decoration-2 underline-offset-4">Shubhranshu</span>.
             </h1>
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#6e6e73] font-normal mt-2">
               Full Stack Developer
@@ -153,7 +153,7 @@ export default function About() {
             <nav className="flex items-center gap-4 sm:gap-6">
               <a href="/about" className="text-xs sm:text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">About</a>
               <a href="#" className="text-xs sm:text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Services</a>
-              <a href="#" className="text-xs sm:text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Components</a>
+              <a href="/skills" className="text-xs sm:text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Skills</a>
             </nav>
           </div>
 

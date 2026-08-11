@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import Image from "next/image";
 
 // Auto-generate active days from May 1 2026 to today
@@ -32,6 +32,7 @@ function toKey(date: Date) {
 function ActivityGrid() {
   const todayKey = toKey(new Date());
   const activeDays = useMemo(() => buildActiveDays(), []);
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
   // Build 53-week grid. Jan 1 2026 = Thursday. Start from Sun Dec 28 2025.
   const weeks = useMemo(() => {
@@ -71,13 +72,13 @@ function ActivityGrid() {
     const todayDate = new Date(); todayDate.setHours(0,0,0,0);
     if (d > todayDate) return "bg-[#1d1d1f]/5 cursor-default";
     const level = activeDays[key];
-    if (!level) return "bg-[#1d1d1f]/8 hover:bg-[#1d1d1f]/14 cursor-default";
+    if (!level) return "bg-[#1d1d1f]/8 hover:bg-[#1d1d1f]/14 cursor-pointer";
     return [
       "",
-      "bg-[#c84b2f]/20 hover:bg-[#c84b2f]/30",
-      "bg-[#c84b2f]/40 hover:bg-[#c84b2f]/50",
-      "bg-[#c84b2f]/65 hover:bg-[#c84b2f]/75",
-      "bg-[#c84b2f]/90 hover:bg-[#c84b2f]",
+      "bg-[#c84b2f]/20 hover:bg-[#c84b2f]/30 cursor-pointer",
+      "bg-[#c84b2f]/40 hover:bg-[#c84b2f]/50 cursor-pointer",
+      "bg-[#c84b2f]/65 hover:bg-[#c84b2f]/75 cursor-pointer",
+      "bg-[#c84b2f]/90 hover:bg-[#c84b2f] cursor-pointer",
     ][level];
   };
 
@@ -115,12 +116,22 @@ function ActivityGrid() {
               const inYear = date.getFullYear() === 2026;
               const isToday = key === todayKey;
               const level = activeDays[key];
+              const d = new Date(key + "T00:00:00");
+              const todayDate = new Date(); todayDate.setHours(0,0,0,0);
+              const clickable = inYear && d <= todayDate;
+
               return (
                 <div
                   key={key}
                   title={inYear && !isToday ? `${key}${level ? ` · Level ${level}` : ""}` : isToday ? `Today · ${key}` : ""}
-                  className={`w-[14px] h-[14px] rounded-[3px] transition-all duration-150 flex-shrink-0
+                  onClick={() => {
+                    if (clickable) {
+                      setSelectedDate(key === selectedDate ? null : key);
+                    }
+                  }}
+                  className={`w-[14px] h-[14px] rounded-[3px] transition-all duration-150 flex-shrink-0 relative
                     ${isToday ? "ring-1 ring-offset-[2px] ring-[#c84b2f] ring-offset-[#f0eee6]" : cellStyle(key, inYear)}
+                    ${selectedDate === key ? "ring-2 ring-[#1d1d1f] scale-110 z-10" : ""}
                   `}
                   style={isToday ? {
                     backgroundColor: "#c84b2f",
@@ -133,15 +144,38 @@ function ActivityGrid() {
         ))}
       </div>
 
-      {/* Legend */}
-      <div className="flex items-center justify-end gap-2 pt-2">
-        <span className="text-[11px] text-[#6e6e73] font-medium font-montserrat">Less</span>
-        <div className="flex gap-1">
-          {["bg-[#1d1d1f]/8","bg-[#c84b2f]/20","bg-[#c84b2f]/40","bg-[#c84b2f]/65","bg-[#c84b2f]/90"].map((c, i) => (
-            <div key={i} className={`w-[14px] h-[14px] rounded-[3px] ${c}`} />
-          ))}
+      {/* Legend & selected date details */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
+        <div className="min-h-[20px] flex items-center">
+          {selectedDate ? (
+            <p className="text-[11px] font-bold text-[#c84b2f] font-montserrat tracking-wide transition-all duration-200">
+              {new Date(selectedDate + "T00:00:00").toLocaleDateString("en-US", {
+                weekday: "long",
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}
+              <span className="text-[#6e6e73] font-normal">
+                {activeDays[selectedDate]
+                  ? ` · Shipped ${activeDays[selectedDate]} times`
+                  : " · No shipments"}
+              </span>
+            </p>
+          ) : (
+            <p className="text-[11px] text-[#6e6e73] font-medium font-montserrat italic">
+              Click any cell to see date and shipping activity
+            </p>
+          )}
         </div>
-        <span className="text-[11px] text-[#6e6e73] font-medium font-montserrat">More</span>
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] text-[#6e6e73] font-medium font-montserrat">Less</span>
+          <div className="flex gap-1">
+            {["bg-[#1d1d1f]/8","bg-[#c84b2f]/20","bg-[#c84b2f]/40","bg-[#c84b2f]/65","bg-[#c84b2f]/90"].map((c, i) => (
+              <div key={i} className={`w-[14px] h-[14px] rounded-[3px] ${c}`} />
+            ))}
+          </div>
+          <span className="text-[11px] text-[#6e6e73] font-medium font-montserrat">More</span>
+        </div>
       </div>
     </div>
   );
@@ -177,7 +211,7 @@ export default function Home() {
           {/* Name and Title */}
           <div className="flex flex-col justify-center">
             <h1 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-[#1d1d1f] leading-[1.1]">
-              Hey, I'm Shubhranshu.
+              Hey, I'm <span className="underline decoration-[#c84b2f] decoration-2 underline-offset-4">Shubhranshu</span>.
             </h1>
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#6e6e73] font-normal mt-2">
               Full Stack Developer
@@ -362,9 +396,9 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
             <p className="text-sm text-[#6e6e73] font-medium">© 2026 Shubhranshu.</p>
             <nav className="flex items-center gap-6">
-              <a href="#" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">About</a>
+              <a href="/about" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">About</a>
               <a href="#" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Services</a>
-              <a href="#" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Skills</a>
+              <a href="/skills" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Skills</a>
             </nav>
           </div>
 
