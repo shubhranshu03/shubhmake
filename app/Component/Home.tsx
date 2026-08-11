@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
+import { RandomizedTextEffect } from "./RandomizedTextEffect";
 
 // Auto-generate active days from May 1 2026 to today
 function buildActiveDays(): Record<string, number> {
@@ -388,6 +389,166 @@ export default function Home() {
             <h2 className="font-serif text-3xl font-medium tracking-tight text-[#1d1d1f]">Days I shipped.</h2>
           </div>
           <ActivityGrid />
+        </div>
+
+        {/* Let's Work Together Section */}
+        <div className="space-y-8 sm:space-y-10 pt-10 border-t border-[#1d1d1f]/10">
+          <div className="space-y-1">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#6e6e73] font-montserrat">Let's Work Together</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+            {/* Left Side - Get in Touch */}
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h3 className="font-serif text-2xl sm:text-3xl font-medium tracking-tight text-[#1d1d1f]">
+                  Get in Touch
+                </h3>
+                <p className="text-sm sm:text-base text-[#6e6e73] leading-relaxed max-w-md">
+                  Choose your preferred method to connect and let's discuss your project.
+                </p>
+              </div>
+
+              {/* Contact Options */}
+              <div className="space-y-4">
+                {/* Schedule a Call */}
+                <a href="https://cal.com/shubhranshu-2003/30min" target="_blank" rel="noopener noreferrer" className="group bg-[#1d1d1f]/8 hover:bg-[#c84b2f] rounded-xl p-4 sm:p-6 transition-all duration-300 cursor-pointer block">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="w-6 h-6 flex-shrink-0 text-[#1d1d1f] group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                          <line x1="16" x2="16" y1="2" y2="6"/>
+                          <line x1="8" x2="8" y1="2" y2="6"/>
+                          <line x1="3" x2="21" y1="10" y2="10"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-sans font-bold text-base sm:text-lg text-[#1d1d1f] group-hover:text-white">Schedule a free call</h4>
+                        <p className="text-xs sm:text-sm text-[#1d1d1f]/70 group-hover:text-white/70">30-minute strategy session</p>
+                      </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform text-[#1d1d1f] group-hover:text-white">
+                      <path d="M5 12h14"/>
+                      <path d="m12 5 7 7-7 7"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Email Contact */}
+                <a href="mailto:shubhranshukhatua@gmail.com" className="group block bg-[#1d1d1f]/8 hover:bg-[#c84b2f] rounded-xl p-4 sm:p-6 transition-all duration-300">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="w-6 h-6 flex-shrink-0 text-[#1d1d1f] group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect width="20" height="16" x="2" y="4" rx="2"/>
+                          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-sans font-bold text-base sm:text-lg text-[#1d1d1f] group-hover:text-white">shubhranshukhatua@gmail.com</h4>
+                        <p className="text-xs sm:text-sm text-[#1d1d1f]/70 group-hover:text-white/70">Quick inquiries & questions</p>
+                      </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform text-[#1d1d1f] group-hover:text-white">
+                      <path d="M5 12h14"/>
+                      <path d="m12 5 7 7-7 7"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* X/Twitter Contact */}
+                <a href="https://x.com/shubhranshu2009" target="_blank" rel="noopener noreferrer" className="group block bg-[#1d1d1f]/8 hover:bg-[#c84b2f] rounded-xl p-4 sm:p-6 transition-all duration-300">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="w-6 h-6 flex-shrink-0 text-[#1d1d1f] group-hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-sans font-bold text-base sm:text-lg text-[#1d1d1f] group-hover:text-white">Connect on X</h4>
+                        <p className="text-xs sm:text-sm text-[#1d1d1f]/70 group-hover:text-white/70">Follow for updates & insights</p>
+                      </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform text-[#1d1d1f] group-hover:text-white">
+                      <path d="M5 12h14"/>
+                      <path d="m12 5 7 7-7 7"/>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+
+              {/* Additional Info */}
+              <div className="space-y-3 pt-4">
+                <div className="flex items-center gap-3 text-sm text-[#6e6e73]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12,6 12,12 16,14"/>
+                  </svg>
+                  <span>Replies within 24 hours</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm text-[#6e6e73]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v6"/>
+                    <path d="m21 12-6-3-6 3-6-3"/>
+                  </svg>
+                  <span>Open to remote, freelance & full-time</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Contact Form */}
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h3 className="font-serif text-2xl sm:text-3xl font-medium tracking-tight text-[#1d1d1f]">
+                  Send a Message
+                </h3>
+                <p className="text-sm sm:text-base text-[#6e6e73] leading-relaxed max-w-md">
+                  Prefer to write? Fill out the form and I'll get back to you within 24 hours.
+                </p>
+              </div>
+
+              {/* Contact Form */}
+              <form className="space-y-4">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="w-full px-4 py-3 sm:py-4 border border-[#1d1d1f]/20 rounded-xl bg-white/50 focus:bg-white focus:border-[#c84b2f] focus:outline-none transition-all duration-300 text-sm sm:text-base"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    className="w-full px-4 py-3 sm:py-4 border border-[#1d1d1f]/20 rounded-xl bg-white/50 focus:bg-white focus:border-[#c84b2f] focus:outline-none transition-all duration-300 text-sm sm:text-base"
+                    required
+                  />
+                </div>
+                <div>
+                  <textarea
+                    placeholder="Your Message"
+                    rows={5}
+                    className="w-full px-4 py-3 sm:py-4 border border-[#1d1d1f]/20 rounded-xl bg-white/50 focus:bg-white focus:border-[#c84b2f] focus:outline-none transition-all duration-300 resize-none text-sm sm:text-base"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="group w-full bg-[#1d1d1f]/8 hover:bg-[#c84b2f] text-[#1d1d1f] hover:text-white px-6 py-3 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2"
+                >
+                  Send Message
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
 
       {/* Footer */}
