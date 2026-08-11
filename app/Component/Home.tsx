@@ -84,13 +84,13 @@ function ActivityGrid() {
   const dayLabels = ["", "Mon", "", "Wed", "", "Fri", ""];
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       {/* Month labels */}
-      <div className="flex gap-[3px] pl-6 overflow-x-auto no-scrollbar">
+      <div className="flex gap-1 pl-8 overflow-x-auto no-scrollbar">
         {weeks.map((week, wi) => {
           const label = monthLabels.find((m) => m.col === wi);
           return (
-            <div key={wi} className="flex-shrink-0 w-[10px] text-[9px] text-[#6e6e73] font-medium font-montserrat">
+            <div key={wi} className="flex-shrink-0 w-[14px] text-[10px] text-[#6e6e73] font-medium font-montserrat">
               {label ? label.label : ""}
             </div>
           );
@@ -98,11 +98,11 @@ function ActivityGrid() {
       </div>
 
       {/* Grid */}
-      <div className="flex gap-[3px] overflow-x-auto no-scrollbar">
+      <div className="flex gap-1 overflow-x-auto no-scrollbar">
         {/* Day labels */}
-        <div className="flex flex-col gap-[3px] flex-shrink-0 pr-1">
+        <div className="flex flex-col gap-1 flex-shrink-0 pr-2">
           {dayLabels.map((label, i) => (
-            <div key={i} className="h-[10px] text-[9px] text-[#6e6e73] font-medium font-montserrat flex items-center">
+            <div key={i} className="h-[14px] text-[10px] text-[#6e6e73] font-medium font-montserrat flex items-center">
               {label}
             </div>
           ))}
@@ -110,7 +110,7 @@ function ActivityGrid() {
 
         {/* Week columns */}
         {weeks.map((week, wi) => (
-          <div key={wi} className="flex flex-col gap-[3px] flex-shrink-0">
+          <div key={wi} className="flex flex-col gap-1 flex-shrink-0">
             {week.map(({ date, key }) => {
               const inYear = date.getFullYear() === 2026;
               const isToday = key === todayKey;
@@ -119,12 +119,12 @@ function ActivityGrid() {
                 <div
                   key={key}
                   title={inYear && !isToday ? `${key}${level ? ` · Level ${level}` : ""}` : isToday ? `Today · ${key}` : ""}
-                  className={`w-[10px] h-[10px] rounded-[2px] transition-all duration-150 flex-shrink-0
-                    ${isToday ? "ring-1 ring-offset-[1.5px] ring-[#c84b2f] ring-offset-[#f0eee6]" : cellStyle(key, inYear)}
+                  className={`w-[14px] h-[14px] rounded-[3px] transition-all duration-150 flex-shrink-0
+                    ${isToday ? "ring-1 ring-offset-[2px] ring-[#c84b2f] ring-offset-[#f0eee6]" : cellStyle(key, inYear)}
                   `}
                   style={isToday ? {
                     backgroundColor: "#c84b2f",
-                    boxShadow: "0 0 6px 1px rgba(200,75,47,0.55)",
+                    boxShadow: "0 0 8px 1px rgba(200,75,47,0.55)",
                   } : {}}
                 />
               );
@@ -134,71 +134,212 @@ function ActivityGrid() {
       </div>
 
       {/* Legend */}
-      <div className="flex items-center justify-end gap-2 pt-1">
-        <span className="text-[10px] text-[#6e6e73] font-medium font-montserrat">Less</span>
-        <div className="flex gap-[3px]">
+      <div className="flex items-center justify-end gap-2 pt-2">
+        <span className="text-[11px] text-[#6e6e73] font-medium font-montserrat">Less</span>
+        <div className="flex gap-1">
           {["bg-[#1d1d1f]/8","bg-[#c84b2f]/20","bg-[#c84b2f]/40","bg-[#c84b2f]/65","bg-[#c84b2f]/90"].map((c, i) => (
-            <div key={i} className={`w-[10px] h-[10px] rounded-[2px] ${c}`} />
+            <div key={i} className={`w-[14px] h-[14px] rounded-[3px] ${c}`} />
           ))}
         </div>
-        <span className="text-[10px] text-[#6e6e73] font-medium font-montserrat">More</span>
+        <span className="text-[11px] text-[#6e6e73] font-medium font-montserrat">More</span>
       </div>
     </div>
   );
 }
 
 export default function Home() {
-  const goal = 100000;
-  const current = 670;
-  const percentage = Math.min((current / goal) * 100, 100);
-
   return (
-    <main className="min-h-screen bg-[#f0eee6] flex flex-col items-center justify-start pt-16 sm:pt-24 md:pt-32 px-8 sm:px-16 md:px-32 pb-24 selection:bg-[#c84b2f]/20 selection:text-[#c84b2f]">
-      <div className="max-w-3xl w-full text-left space-y-12 animate-fade-in">
+    <main className="min-h-screen bg-[#f0eee6] flex flex-col items-center justify-start pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-4 sm:px-8 md:px-16 lg:px-32 pb-16 sm:pb-24 selection:bg-[#c84b2f]/20 selection:text-[#c84b2f]">
+      
+      {/* Navigation Header */}
+      <nav className="max-w-4xl w-full text-left mb-12 sm:mb-16 md:mb-24 animate-fade-in">
+        <ul className="flex items-center gap-4 sm:gap-6 md:gap-8 text-base sm:text-lg md:text-xl font-medium font-sans">
+          <li>
+            <a href="/" className="text-[#1d1d1f] transition-colors cursor-pointer">Home</a>
+          </li>
+          <li>
+            <a href="/about" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors cursor-pointer">About</a>
+          </li>
+          <li>
+            <a href="#" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors cursor-pointer">Components</a>
+          </li>
+        </ul>
+      </nav>
 
-        {/* Profile Image (circular) */}
-        <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-[#1d1d1f] shadow-md">
-          <Image src="/shubhranshu.jpg" alt="Shubhranshu" fill sizes="(max-width: 640px) 112px, 144px" className="object-cover" priority />
+      <div className="max-w-4xl w-full text-left space-y-8 sm:space-y-10 md:space-y-12 animate-fade-in">
+        {/* Profile Section with Image and Name */}
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+          {/* Profile Image (circular) */}
+          <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-2 border-[#1d1d1f] shadow-md flex-shrink-0">
+            <Image src="/shubhranshu.jpg" alt="Shubhranshu" fill sizes="(max-width: 640px) 80px, (max-width: 768px) 112px, 144px" className="object-cover" priority />
+          </div>
+          
+          {/* Name and Title */}
+          <div className="flex flex-col justify-center">
+            <h1 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-[#1d1d1f] leading-[1.1]">
+              Hey, I'm Shubhranshu.
+            </h1>
+            <p className="font-sans text-sm sm:text-base md:text-lg text-[#6e6e73] font-normal mt-2">
+              Full Stack Developer
+            </p>
+          </div>
         </div>
 
         {/* Bio Text Group */}
-        <div className="space-y-6">
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight text-[#1d1d1f] leading-[1.1]">
-            Hey, I'm Shubhranshu.
-          </h1>
-          <p className="font-sans text-xl sm:text-2xl text-[#1d1d1f] font-normal leading-relaxed opacity-95 max-w-2xl">
-            A builder with 2 years in the field, currently building software products and chasing a $100K year, one shipped thing at a time.
+        <div className="space-y-3 sm:space-y-4">
+          <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-[#1d1d1f] font-normal leading-relaxed opacity-95 max-w-3xl">
+            I build full products, front to back, and I'm annoyingly obsessive about the small details most people skip, the ones that quietly decide whether software actually feels good to use or just technically works.
+          </p>
+          <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-[#1d1d1f] font-normal leading-relaxed opacity-95 max-w-3xl">
+            Currently living in TypeScript, React, Next.js, and Tailwind.
           </p>
         </div>
 
-        {/* $100K Goal Progress */}
-        <div className="space-y-5 pt-10 border-t border-[#1d1d1f]/10">
-          <div className="flex items-end justify-between">
-            <div className="space-y-1">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat">Revenue Goal · 2026</p>
-              <h2 className="font-serif text-3xl font-medium tracking-tight text-[#1d1d1f]">The $100K Year.</h2>
-            </div>
-            <div className="flex items-center gap-1.5 bg-[#1d1d1f]/5 border border-[#1d1d1f]/8 rounded-full px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#c84b2f] animate-pulse"></span>
-              <span className="text-xs font-bold text-[#1d1d1f] font-montserrat tracking-wide">LIVE</span>
-            </div>
+        {/* Tech Stack */}
+        <div className="space-y-4">
+          <p className="text-sm sm:text-base font-bold uppercase tracking-[0.2em] text-[#6e6e73] font-montserrat">Tech Stack</p>
+          <div className="grid grid-cols-4 gap-1 sm:flex sm:flex-wrap sm:items-center sm:gap-3 md:gap-4">
+            {[
+              { src: "/a1 (1).png", alt: "TypeScript" },
+              { src: "/a1 (2).png", alt: "JavaScript" },
+              { src: "/a1 (3).png", alt: "React" },
+              { src: "/a1 (4).png", alt: "Next.js" },
+              { src: "/a1 (5).png", alt: "Tailwind CSS" },
+              { src: "/a1 (6).png", alt: "Node.js" },
+              { src: "/a1 (7).png", alt: "Git" },
+              { src: "/a1 (8).png", alt: "GitHub" },
+              { src: "/a1 (9).png", alt: "MongoDB" },
+              { src: "/a1 (10).png", alt: "Supabase" },
+            ].map((tech) => (
+              <div
+                key={tech.alt}
+                className="relative w-16 h-16 sm:w-22 sm:h-22 md:w-24 md:h-24 hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center"
+                title={tech.alt}
+              >
+                <Image src={tech.src} alt={tech.alt} fill sizes="(max-width: 640px) 64px, (max-width: 768px) 88px, 96px" className="object-contain" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Featured Projects */}
+        <div className="space-y-6 pt-10 border-t border-[#1d1d1f]/10">
+          <div className="space-y-1">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat">Featured Projects</p>
+            <h2 className="font-serif text-3xl font-medium tracking-tight text-[#1d1d1f]">What I've built.</h2>
           </div>
 
-          <div className="space-y-3">
-            <div className="relative w-full h-4 bg-[#1d1d1f]/8 rounded-full overflow-hidden border border-[#1d1d1f]/5">
-              <div
-                className="h-full bg-[#c84b2f] rounded-full transition-all duration-1000 ease-out relative overflow-hidden"
-                style={{ width: `${percentage === 0 ? 0 : Math.max(percentage, 1.5)}%` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Project 1 - webstudioorg.net */}
+            <div className="group relative rounded-2xl overflow-hidden border border-[#1d1d1f]/10 bg-white hover:shadow-lg transition-all duration-500 cursor-pointer">
+              {/* Project Image */}
+              <div className="relative w-full h-48 sm:h-56 bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden">
+                <Image 
+                  src="/p1.png" 
+                  alt="webstudioorg.net project preview" 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
+              </div>
+              
+              {/* Project Info */}
+              <div className="p-6 space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-sans font-bold text-xl text-[#1d1d1f] tracking-tight">webstudioorg.net</h3>
+                  <div className="flex items-center gap-2">
+                    <a 
+                      href="https://github.com/shubhranshu03" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-full bg-[#1d1d1f]/5 hover:bg-[#1d1d1f]/10 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                        <path d="M9 18c-4.51 2-5-2-7-2"/>
+                      </svg>
+                    </a>
+                    <a 
+                      href="https://webstudioorg.net" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-full bg-[#1d1d1f]/5 hover:bg-[#1d1d1f]/10 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15,3 21,3 21,9"/>
+                        <line x1="10" x2="21" y1="14" y2="3"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <p className="text-sm text-[#6e6e73] leading-relaxed">
+                  Turn ideas into websites, graphics, and marketing assets through simple prompts. A comprehensive design platform built with modern web technologies.
+                </p>
+                
+                {/* Tech Stack Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {["Next.js", "React", "TypeScript", "Tailwind"].map((tech) => (
+                    <span 
+                      key={tech} 
+                      className="text-xs font-medium px-3 py-1 rounded-full bg-[#1d1d1f]/8 text-[#1d1d1f] font-montserrat"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="flex items-center justify-between text-xs font-medium font-montserrat">
-              <div>
-                <p className="text-[#1d1d1f] font-bold text-sm">${current.toLocaleString()} <span className="text-[#6e6e73] font-normal">earned</span></p>
+
+            {/* Project 2 - Coming Soon */}
+            <div className="group relative rounded-2xl overflow-hidden border border-[#1d1d1f]/10 bg-gradient-to-br from-[#1d1d1f]/5 to-[#1d1d1f]/10 hover:shadow-lg transition-all duration-500 cursor-pointer">
+              {/* Project Image Placeholder */}
+              <div className="relative w-full h-48 sm:h-56 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden flex items-center justify-center">
+                <div className="text-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-[#1d1d1f]/10 flex items-center justify-center mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#6e6e73]">
+                      <path d="M12 2v20M2 12h20"/>
+                    </svg>
+                  </div>
+                  <p className="text-sm font-medium text-[#6e6e73] font-montserrat">Coming Soon</p>
+                </div>
               </div>
-              <div className="text-right">
-                <p className="text-[#1d1d1f] font-bold text-sm">${goal.toLocaleString()} <span className="text-[#6e6e73] font-normal">goal</span></p>
+              
+              {/* Project Info */}
+              <div className="p-6 space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-sans font-bold text-xl text-[#1d1d1f] tracking-tight">Next Project</h3>
+                  <div className="flex items-center gap-2 opacity-50">
+                    <div className="p-1.5 rounded-full bg-[#1d1d1f]/5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                        <path d="M9 18c-4.51 2-5-2-7-2"/>
+                      </svg>
+                    </div>
+                    <div className="p-1.5 rounded-full bg-[#1d1d1f]/5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15,3 21,3 21,9"/>
+                        <line x1="10" x2="21" y1="14" y2="3"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-sm text-[#6e6e73] leading-relaxed">
+                  Something exciting is brewing. A new project that will showcase innovative solutions and cutting-edge design patterns.
+                </p>
+                
+                {/* Status Tag */}
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-[#c84b2f]/10 text-[#c84b2f] font-montserrat border border-[#c84b2f]/20">
+                    In Development
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -213,151 +354,59 @@ export default function Home() {
           <ActivityGrid />
         </div>
 
-        {/* Roadmap Section — Premium Redesign */}
-        <div className="pt-10 border-t border-[#1d1d1f]/10 space-y-10">
-          <div className="space-y-1">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat">Roadmap</p>
-            <h2 className="font-serif text-3xl font-medium tracking-tight text-[#1d1d1f]">What I'm building.</h2>
+      {/* Footer */}
+        <div className="pt-16 border-t border-[#1d1d1f]/10 flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
+          {/* Copyright and Navigation */}
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+            <p className="text-sm text-[#6e6e73] font-medium">© 2026 Shubhranshu.</p>
+            <nav className="flex items-center gap-6">
+              <a href="#" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">About</a>
+              <a href="#" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Services</a>
+              <a href="#" className="text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Components</a>
+            </nav>
           </div>
 
-          {/* ── 2026 ── */}
-          <div className="space-y-4">
-            {/* Year banner */}
-            <div className="flex items-center gap-4">
-              <span className="font-serif text-5xl font-bold text-[#1d1d1f] leading-none">2026</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-[#1d1d1f]/15 to-transparent" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat bg-[#c84b2f]/8 px-3 py-1 rounded-full border border-[#c84b2f]/15">Active</span>
-            </div>
+          {/* Social Icons */}
+          <div className="flex items-center gap-4">
+            {/* X Profile */}
+            <a
+              href="https://x.com/shubhranshu2009"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors"
+              title="X Profile"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
+              </svg>
+            </a>
 
-            {/* Project 01 — webstudio.org (fully visible, premium card) */}
-            <div className="group relative rounded-2xl overflow-hidden border border-[#1d1d1f]/8 bg-[#1d1d1f]/4 hover:bg-[#1d1d1f]/7 transition-all duration-500 hover:border-[#1d1d1f]/15 hover:shadow-lg cursor-pointer">
-              <div className="flex items-center gap-5 p-5">
-                {/* Logo */}
-                <div className="relative w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0 shadow-md group-hover:scale-105 transition-transform duration-500">
-                  <Image src="/webstudio-logo.jpeg" alt="webstudio.org" fill sizes="56px" className="object-cover" />
-                </div>
-                {/* Info */}
-                <div className="flex-1 min-w-0 space-y-1.5">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat">01</span>
-                    <span className="w-1 h-1 rounded-full bg-[#1d1d1f]/20" />
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-[#6e6e73] font-montserrat">Web Agency</span>
-                  </div>
-                  <h4 className="font-sans font-bold text-lg text-[#1d1d1f] tracking-tight leading-tight">webstudio.org</h4>
-                  <p className="text-xs text-[#6e6e73] leading-relaxed">Fixing websites that quietly cost businesses customers — not just making them look better.</p>
-                  {/* Tags */}
-                  <div className="flex gap-2 flex-wrap pt-1">
-                    {["Design", "Agency", "Live"].map((tag) => (
-                      <span key={tag} className={`text-[10px] font-semibold px-2.5 py-0.5 rounded-full font-montserrat tracking-wide
-                        ${tag === "Live"
-                          ? "bg-emerald-500/10 text-emerald-700 border border-emerald-500/20"
-                          : "bg-[#1d1d1f]/6 text-[#6e6e73] border border-[#1d1d1f]/8"}`}>
-                        {tag === "Live" && <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse" />}
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                {/* Arrow */}
-                <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-1 group-hover:translate-x-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c84b2f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </div>
-              </div>
-            </div>
+            {/* Email */}
+            <a
+              href="mailto:shubhranshukhatua@gmail.com"
+              className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors"
+              title="Email Me"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </a>
 
-            {/* Projects 02 & 03 — Classified */}
-            <div className="grid grid-cols-2 gap-3">
-              {[{ num: "02" }, { num: "03" }].map((p) => (
-                <div key={p.num} className="relative rounded-2xl border border-[#1d1d1f]/8 bg-[#1d1d1f]/4 overflow-hidden p-5 min-h-[120px] flex flex-col justify-between">
-                  {/* Blurred content */}
-                  <div className="select-none blur-sm opacity-30 space-y-2 pointer-events-none">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat">{p.num}</span>
-                    <div className="w-16 h-3 bg-[#1d1d1f]/40 rounded" />
-                    <div className="w-24 h-2 bg-[#1d1d1f]/20 rounded" />
-                    <div className="w-20 h-2 bg-[#1d1d1f]/20 rounded" />
-                  </div>
-                  {/* Lock overlay */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-[#1d1d1f]/8 border border-[#1d1d1f]/10 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6e6e73" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    </div>
-                    <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-[#6e6e73]/60 font-montserrat">2026</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* GitHub */}
+            <a
+              href="https://github.com/shubhranshu03"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors"
+              title="GitHub Profile"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                <path d="M9 18c-4.51 2-5-2-7-2"/>
+              </svg>
+            </a>
           </div>
-
-          {/* ── 2027 ── */}
-          <div className="space-y-4">
-            {/* Year banner */}
-            <div className="flex items-center gap-4">
-              <span className="font-serif text-5xl font-bold text-[#1d1d1f]/30 leading-none">2027</span>
-              <div className="flex-1 h-px bg-gradient-to-r from-[#1d1d1f]/10 to-transparent" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#6e6e73] font-montserrat bg-[#1d1d1f]/5 px-3 py-1 rounded-full border border-[#1d1d1f]/8">Locked</span>
-            </div>
-
-            {/* All 3 classified */}
-            <div className="grid grid-cols-3 gap-3">
-              {[{ num: "04" }, { num: "05" }, { num: "06" }].map((p) => (
-                <div key={p.num} className="relative rounded-2xl border border-[#1d1d1f]/6 bg-[#1d1d1f]/3 overflow-hidden p-5 min-h-[110px] flex flex-col justify-between">
-                  <div className="select-none blur-sm opacity-20 space-y-2 pointer-events-none">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat">{p.num}</span>
-                    <div className="w-12 h-2.5 bg-[#1d1d1f]/40 rounded" />
-                    <div className="w-16 h-2 bg-[#1d1d1f]/20 rounded" />
-                  </div>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-[#1d1d1f]/6 border border-[#1d1d1f]/8 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6e6e73" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                    </div>
-                    <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-[#6e6e73]/40 font-montserrat">2027</span>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Footer Social Icons */}
-        <div className="pt-12 border-t border-[#1d1d1f]/10 flex justify-center items-center gap-8">
-          {/* Email */}
-          <a
-            href="mailto:shubhranshukhatua@gmail.com"
-            className="p-3 rounded-full bg-[#1d1d1f]/4 border border-[#1d1d1f]/8 text-[#6e6e73] hover:text-[#c84b2f] hover:bg-[#c84b2f]/10 hover:border-[#c84b2f]/20 transition-all duration-300 group"
-            title="Email Me"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform duration-300">
-              <rect width="20" height="16" x="2" y="4" rx="2"/>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
-          </a>
-
-          {/* GitHub */}
-          <a
-            href="https://github.com/shubhranshu03"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-[#1d1d1f]/4 border border-[#1d1d1f]/8 text-[#6e6e73] hover:text-[#c84b2f] hover:bg-[#c84b2f]/10 hover:border-[#c84b2f]/20 transition-all duration-300 group"
-            title="GitHub Profile"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:scale-110 transition-transform duration-300">
-              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-              <path d="M9 18c-4.51 2-5-2-7-2"/>
-            </svg>
-          </a>
-
-          {/* X Profile */}
-          <a
-            href="https://x.com/shubhranshu2009"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-[#1d1d1f]/4 border border-[#1d1d1f]/8 text-[#6e6e73] hover:text-[#c84b2f] hover:bg-[#c84b2f]/10 hover:border-[#c84b2f]/20 transition-all duration-300 group"
-            title="X Profile"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="group-hover:scale-110 transition-transform duration-300">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
-            </svg>
-          </a>
         </div>
 
         {/* Closing Quote */}
