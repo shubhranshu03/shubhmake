@@ -3,6 +3,7 @@
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
 import { RandomizedTextEffect } from "./RandomizedTextEffect";
+import MusicPlayer from "./MusicPlayer";
 
 // Auto-generate active days from May 1 2026 to today
 function buildActiveDays(): Record<string, number> {
@@ -228,6 +229,11 @@ export default function Home() {
           <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-[#1d1d1f] font-normal leading-relaxed opacity-95 max-w-3xl">
             Currently living in TypeScript, React, Next.js, and Tailwind.
           </p>
+
+          {/* Spotify Music Player */}
+          <div className="pt-4 pb-2">
+            <MusicPlayer />
+          </div>
         </div>
 
         {/* Tech Stack */}
