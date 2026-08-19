@@ -215,7 +215,7 @@ export default function Home() {
               Hey, I'm <span className="underline decoration-[#c84b2f] decoration-2 underline-offset-4">Shubhranshu</span>.
             </h1>
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#6e6e73] font-normal mt-2">
-              Full Stack Developer
+              <RandomizedTextEffect text="Full Stack Developer" />
             </p>
           </div>
         </div>
@@ -298,19 +298,13 @@ export default function Home() {
                         <path d="M9 18c-4.51 2-5-2-7-2"/>
                       </svg>
                     </a>
-                    <a 
-                      href="https://webstudioorg.net" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-1.5 rounded-full bg-[#1d1d1f]/5 hover:bg-[#1d1d1f]/10 transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
+                    <div className="p-1.5 rounded-full bg-[#1d1d1f]/5 cursor-not-allowed opacity-50">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                         <polyline points="15,3 21,3 21,9"/>
                         <line x1="10" x2="21" y1="14" y2="3"/>
                       </svg>
-                    </a>
+                    </div>
                   </div>
                 </div>
                 
@@ -328,6 +322,14 @@ export default function Home() {
                       {tech}
                     </span>
                   ))}
+                </div>
+
+                {/* Status Banner */}
+                <div className="flex items-center justify-center mt-4 pt-4 border-t border-[#1d1d1f]/10">
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#c84b2f]/10 border border-[#c84b2f]/20">
+                    <div className="w-2 h-2 rounded-full bg-[#c84b2f] animate-pulse"></div>
+                    <span className="text-sm font-medium text-[#c84b2f] font-montserrat">Live in 10 days</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -394,7 +396,7 @@ export default function Home() {
         {/* Let's Work Together Section */}
         <div className="space-y-8 sm:space-y-10 pt-10 border-t border-[#1d1d1f]/10">
           <div className="space-y-1">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#6e6e73] font-montserrat">Let's Work Together</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat">Let's Work Together</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">

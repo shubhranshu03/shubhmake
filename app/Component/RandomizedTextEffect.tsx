@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 
 const lettersAndSymbols = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*-_+=;:<>,';
 
@@ -10,6 +11,9 @@ interface AnimatedTextProps {
 
 export function RandomizedTextEffect({ text }: AnimatedTextProps) {
   const [animatedText, setAnimatedText] = useState('');
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const pathname = usePathname();
 
   const getRandomChar = useCallback(() =>
     lettersAndSymbols[Math.floor(Math.random() * lettersAndSymbols.length)],
@@ -17,6 +21,9 @@ export function RandomizedTextEffect({ text }: AnimatedTextProps) {
   );
 
   const animateText = useCallback(async () => {
+    if (isAnimating || hasAnimated) return;
+    
+    setIsAnimating(true);
     const duration = 50;
     const revealDuration = 80;
     const initialRandomDuration = 300;
@@ -39,11 +46,27 @@ export function RandomizedTextEffect({ text }: AnimatedTextProps) {
         prevText.slice(i + 1).split('').map(() => getRandomChar()).join('')
       );
     }
-  }, [text, getRandomChar]);
+    
+    setIsAnimating(false);
+    setHasAnimated(true);
+  }, [text, getRandomChar, isAnimating, hasAnimated]);
 
   useEffect(() => {
-    animateText();
-  }, [text, animateText]);
+    // Reset animation state when pathname changes (page navigation)
+    setHasAnimated(false);
+    setAnimatedText('');
+  }, [pathname]);
 
-  return <div className='relative inline-block'>{animatedText}</div>;
+  useEffect(() => {
+    // Only animate if we haven't animated yet for this page
+    if (!hasAnimated && !isAnimating) {
+      const timer = setTimeout(() => {
+        animateText();
+      }, 500); // Small delay for page load
+
+      return () => clearTimeout(timer);
+    }
+  }, [animateText, hasAnimated, isAnimating]);
+
+  return <span className='relative inline-block'>{animatedText}</span>;
 }
