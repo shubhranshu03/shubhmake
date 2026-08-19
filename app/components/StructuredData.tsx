@@ -3,8 +3,8 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Shubhranshu Khatua",
-    jobTitle: "Full Stack Developer",
-    description: "Full Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
+    jobTitle: "Indie Hacker & Product Builder",
+    description: "Indie hacker building digital products from scratch. Full Stack Developer with 20+ projects, creating solutions that solve real problems.",
     url: "https://shubhmake.online",
     image: "https://shubhmake.online/shubhranshu.jpg",
     email: "shubhranshukhatua@gmail.com",
@@ -15,9 +15,13 @@ export default function StructuredData() {
     ],
     worksFor: {
       "@type": "Organization",
-      name: "Freelance"
+      name: "Independent Builder"
     },
     knowsAbout: [
+      "Product Development",
+      "Indie Hacking",
+      "Digital Products",
+      "SaaS Development",
       "React",
       "Next.js", 
       "TypeScript",
@@ -27,9 +31,8 @@ export default function StructuredData() {
       "Supabase",
       "Tailwind CSS",
       "Web Development",
-      "Frontend Development",
-      "Backend Development",
-      "UI/UX Design"
+      "Full Stack Development",
+      "Startup Building"
     ],
     alumniOf: {
       "@type": "EducationalOrganization",

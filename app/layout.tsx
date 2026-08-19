@@ -32,30 +32,32 @@ const ptSerif = PT_Serif({
 
 export const metadata: Metadata = {
   title: {
-    default: "Shubhranshu Khatua | Full Stack Developer & UI/UX Designer",
+    default: "Indie Hacker & Full Stack Builder",
     template: "%s | Shubhranshu Khatua"
   },
-  description: "Full Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. I build scalable web applications and user-friendly interfaces that solve real business problems.",
+  description: "Indie hacker building digital products from scratch. Full Stack Developer with 20+ projects, specializing in React, Next.js, and creating solutions that solve real problems.",
   keywords: [
+    "Indie Hacker",
+    "Product Builder", 
+    "Solo Developer",
+    "Digital Products",
     "Full Stack Developer",
     "React Developer", 
     "Next.js Developer",
     "TypeScript Developer",
+    "Startup Founder",
+    "Bootstrap Builder",
     "Web Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "UI/UX Designer",
+    "SaaS Builder",
     "JavaScript Developer",
     "Node.js Developer",
     "Tailwind CSS",
     "MongoDB",
     "Supabase",
-    "Web Design",
-    "Portfolio",
+    "Web Applications",
     "Shubhranshu Khatua",
     "Software Engineer",
-    "Web Applications",
-    "Responsive Design"
+    "Product Development"
   ],
   authors: [{ name: "Shubhranshu Khatua" }],
   creator: "Shubhranshu Khatua",
@@ -75,22 +77,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://shubhmake.online",
-    siteName: "Shubhranshu Khatua Portfolio",
-    title: "Shubhranshu Khatua | Full Stack Developer & UI/UX Designer",
-    description: "Full Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. I build scalable web applications and user-friendly interfaces.",
+    siteName: "Shubhranshu Khatua - Indie Hacker",
+    title: "Indie Hacker & Full Stack Builder",
+    description: "Indie hacker building digital products from scratch. 20+ projects built, failed, and learned from. Currently shipping with React, Next.js, and modern web tech.",
     images: [
       {
         url: "/shubhranshu.jpg",
         width: 1200,
         height: 630,
-        alt: "Shubhranshu Khatua - Full Stack Developer",
+        alt: "Shubhranshu Khatua - Indie Hacker & Product Builder",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shubhranshu Khatua | Full Stack Developer & UI/UX Designer",
-    description: "Full Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Building scalable web applications.",
+    title: "Indie Hacker & Full Stack Builder",
+    description: "Building digital products solo. 20+ projects, multiple failures, constant learning. Shipping with React, Next.js, TypeScript.",
     creator: "@shubhranshu2009",
     images: ["/shubhranshu.jpg"],
   },
@@ -103,9 +105,9 @@ export const metadata: Metadata = {
   category: "technology",
   classification: "Portfolio Website",
   icons: {
-    icon: '/fav.png',
-    shortcut: '/fav.png',
-    apple: '/fav.png',
+    icon: '/fav1.png',
+    shortcut: '/fav1.png',
+    apple: '/fav1.png',
   },
 };
 

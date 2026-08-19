@@ -2,16 +2,16 @@ import { Metadata } from "next";
 import About from "../Component/About";
 
 export const metadata: Metadata = {
-  title: "About Shubhranshu | Full Stack Developer Journey",
-  description: "Learn about Shubhranshu's journey from Electrical Engineering to becoming a Full Stack Developer. Discover the story behind 20+ projects, failures, learnings, and the passion for building digital products.",
+  title: "About | From Village Student to Indie Hacker",
+  description: "The complete journey from Electrical Engineering student in a small village to becoming an indie hacker. 20+ projects built, multiple failures, and the continuous pursuit of building products that matter.",
   openGraph: {
-    title: "About Shubhranshu | Full Stack Developer Journey", 
-    description: "From village student to Full Stack Developer - the complete journey of learning, building, and creating digital products.",
+    title: "About | From Village Student to Indie Hacker", 
+    description: "The raw story of becoming an indie hacker - from village student to building 20+ digital products, with all the failures and learnings in between.",
     url: "https://shubhmake.online/about",
   },
   twitter: {
-    title: "About Shubhranshu | Full Stack Developer Journey",
-    description: "From village student to Full Stack Developer - discover the journey of 20+ projects and continuous learning.",
+    title: "About | From Village Student to Indie Hacker",
+    description: "The complete indie hacker journey - 20+ projects, multiple failures, constant building, and the pursuit of products that solve real problems.",
   },
   alternates: {
     canonical: "https://shubhmake.online/about",
