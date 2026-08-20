@@ -37,7 +37,7 @@ export default function About() {
               Hey, I'm <span className="underline decoration-[#c84b2f] decoration-2 underline-offset-4">Shubhranshu</span>.
             </h1>
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#6e6e73] font-normal mt-2">
-              <RandomizedTextEffect text="Full Stack Developer" />
+              <RandomizedTextEffect text="Full Stack Builder" />
             </p>
           </div>
         </div>

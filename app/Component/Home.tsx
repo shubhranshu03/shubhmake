@@ -4,6 +4,7 @@ import React, { useMemo, useState } from "react";
 import Image from "next/image";
 import { RandomizedTextEffect } from "./RandomizedTextEffect";
 import MusicPlayer from "./MusicPlayer";
+import ContactForm from "./ContactForm";
 
 // Auto-generate active days from May 1 2026 to today
 function buildActiveDays(): Record<string, number> {
@@ -216,7 +217,7 @@ export default function Home() {
               Hey, I'm <span className="underline decoration-[#c84b2f] decoration-2 underline-offset-4">Shubhranshu</span>.
             </h1>
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#6e6e73] font-normal mt-2">
-              <RandomizedTextEffect text="Full Stack Developer" />
+              <RandomizedTextEffect text="Full Stack Builder" />
             </p>
           </div>
         </div>
@@ -519,42 +520,7 @@ export default function Home() {
               </div>
 
               {/* Contact Form */}
-              <form className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="w-full px-4 py-3 sm:py-4 border border-[#1d1d1f]/20 rounded-xl bg-white/50 focus:bg-white focus:border-[#c84b2f] focus:outline-none transition-all duration-300 text-sm sm:text-base"
-                    required
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full px-4 py-3 sm:py-4 border border-[#1d1d1f]/20 rounded-xl bg-white/50 focus:bg-white focus:border-[#c84b2f] focus:outline-none transition-all duration-300 text-sm sm:text-base"
-                    required
-                  />
-                </div>
-                <div>
-                  <textarea
-                    placeholder="Your Message"
-                    rows={5}
-                    className="w-full px-4 py-3 sm:py-4 border border-[#1d1d1f]/20 rounded-xl bg-white/50 focus:bg-white focus:border-[#c84b2f] focus:outline-none transition-all duration-300 resize-none text-sm sm:text-base"
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="group w-full bg-[#1d1d1f]/8 hover:bg-[#c84b2f] text-[#1d1d1f] hover:text-white px-6 py-3 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 font-montserrat"
-                >
-                  Send Message
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
-                    <path d="M5 12h14"/>
-                    <path d="m12 5 7 7-7 7"/>
-                  </svg>
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>

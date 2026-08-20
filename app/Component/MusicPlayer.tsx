@@ -105,7 +105,6 @@ export default function MusicPlayer() {
       <div className="flex-1 min-w-0">
         <p className="font-sans text-sm text-[#6e6e73]">
           All The Stars (with SZA) - From "Black Panther: The Album"
-          {!isLoaded && <span className="text-xs text-red-500 ml-2">(Loading...)</span>}
         </p>
       </div>
 
