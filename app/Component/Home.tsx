@@ -237,35 +237,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Tech Stack */}
-        <div className="space-y-4">
-          <p className="text-sm sm:text-base font-bold uppercase tracking-[0.2em] text-[#c84b2f] font-montserrat">Tech Stack</p>
-          <div className="grid grid-cols-4 gap-1 sm:flex sm:flex-wrap sm:items-center sm:gap-3 md:gap-4">
-            {[
-              { src: "/a1 (1).png", alt: "TypeScript" },
-              { src: "/a1 (2).png", alt: "JavaScript" },
-              { src: "/github1.png", alt: "GitHub New" },
-              { src: "/git1.png", alt: "Git New" },
-              { src: "/a1 (3).png", alt: "React" },
-              { src: "/a1 (4).png", alt: "Next.js" },
-              { src: "/a1 (5).png", alt: "Tailwind CSS" },
-              { src: "/a1 (6).png", alt: "Node.js" },
-              { src: "/a1 (7).png", alt: "Git Original" },
-              { src: "/a1 (8).png", alt: "GitHub Original" },
-              { src: "/a1 (9).png", alt: "MongoDB" },
-              { src: "/a1 (10).png", alt: "Supabase" },
-            ].map((tech) => (
-              <div
-                key={tech.alt}
-                className="relative w-16 h-16 sm:w-22 sm:h-22 md:w-24 md:h-24 hover:scale-110 transition-all duration-300 cursor-pointer flex items-center justify-center"
-                title={tech.alt}
-              >
-                <Image src={tech.src} alt={tech.alt} fill sizes="(max-width: 640px) 64px, (max-width: 768px) 88px, 96px" className="object-contain" />
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Featured Projects */}
         <div className="space-y-6 pt-10 border-t border-[#1d1d1f]/10">
           <div className="space-y-1">
@@ -273,131 +244,124 @@ export default function Home() {
             <h2 className="font-serif text-3xl font-medium tracking-tight text-[#1d1d1f]">What I've built.</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-12 pt-4">
             {/* Project 1 - webstudioorg.net */}
-            <div className="group relative rounded-2xl overflow-hidden border border-[#1d1d1f]/10 bg-white hover:shadow-lg transition-all duration-500 cursor-pointer">
-              {/* Project Image */}
-              <div className="relative w-full h-48 sm:h-56 bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden">
+            <div className="group flex flex-col lg:flex-row gap-8 items-start">
+              <div className="flex-shrink-0 w-full lg:w-96 h-56 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 relative">
                 <Image 
                   src="/p1.png" 
-                  alt="webstudioorg.net project preview" 
+                  alt="webstudioorg.net preview" 
                   fill 
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 384px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
               </div>
-              
-              {/* Project Info */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-sans font-bold text-xl text-[#1d1d1f] tracking-tight">webstudioorg.net</h3>
-                  <div className="flex items-center gap-2">
+              <div className="flex-1 space-y-6">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="font-sans font-bold text-2xl sm:text-3xl text-[#1d1d1f] group-hover:text-[#c84b2f] transition-colors">webstudioorg.net</h3>
+                    <p className="text-[#6e6e73] text-base sm:text-lg leading-relaxed mt-4">
+                      Turn ideas into websites, graphics, and marketing assets through simple prompts. A comprehensive design platform that bridges the gap between concept and creation.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3 ml-6">
                     <a 
                       href="https://github.com/shubhranshu03" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="p-1.5 rounded-full bg-[#1d1d1f]/5 hover:bg-[#1d1d1f]/10 transition-colors"
-                      onClick={(e) => e.stopPropagation()}
+                      className="p-3 rounded-xl bg-[#1d1d1f]/10 hover:bg-[#1d1d1f]/20 transition-colors"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
                         <path d="M9 18c-4.51 2-5-2-7-2"/>
                       </svg>
                     </a>
-                    <div className="p-1.5 rounded-full bg-[#1d1d1f]/5 cursor-not-allowed opacity-50">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                        <polyline points="15,3 21,3 21,9"/>
-                        <line x1="10" x2="21" y1="14" y2="3"/>
-                      </svg>
-                    </div>
                   </div>
                 </div>
-                
-                <p className="text-sm text-[#6e6e73] leading-relaxed">
-                  Turn ideas into websites, graphics, and marketing assets through simple prompts. A comprehensive design platform built with modern web technologies.
-                </p>
-                
-                {/* Tech Stack Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {["Next.js", "React", "TypeScript", "Tailwind"].map((tech) => (
-                    <span 
-                      key={tech} 
-                      className="text-xs font-medium px-3 py-1 rounded-full bg-[#1d1d1f]/8 text-[#1d1d1f] font-montserrat"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Status Banner */}
-                <div className="flex items-center justify-center mt-4 pt-4 border-t border-[#1d1d1f]/10">
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#c84b2f]/10 border border-[#c84b2f]/20">
-                    <div className="w-2 h-2 rounded-full bg-[#c84b2f] animate-pulse"></div>
-                    <span className="text-sm font-medium text-[#c84b2f] font-montserrat">Live in 10 days</span>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="flex flex-wrap gap-2">
+                    {["Next.js", "React", "TypeScript", "Tailwind"].map((tech) => (
+                      <span 
+                        key={tech} 
+                        className="text-xs font-medium px-3 py-1 rounded-full bg-[#1d1d1f]/8 text-[#1d1d1f] font-montserrat"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
+                  <span className="px-4 py-2 bg-[#c84b2f]/10 text-[#c84b2f] text-sm font-medium rounded-full border border-[#c84b2f]/20 w-fit">
+                    Live in 10 days
+                  </span>
                 </div>
               </div>
             </div>
 
-            {/* Project 2 - Coming Soon */}
-            <div className="group relative rounded-2xl overflow-hidden border border-[#1d1d1f]/10 bg-gradient-to-br from-[#1d1d1f]/5 to-[#1d1d1f]/10 hover:shadow-lg transition-all duration-500 cursor-pointer">
-              {/* Project Image Placeholder */}
-              <div className="relative w-full h-48 sm:h-56 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden flex items-center justify-center">
-                <div className="text-center space-y-3">
-                  <div className="w-16 h-16 rounded-full bg-[#1d1d1f]/10 flex items-center justify-center mx-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#6e6e73]">
-                      <path d="M12 2v20M2 12h20"/>
-                    </svg>
-                  </div>
-                  <p className="text-sm font-medium text-[#6e6e73] font-montserrat">Coming Soon</p>
-                </div>
+            {/* Divider Line */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-[#1d1d1f]/20 to-transparent"></div>
+
+            {/* Project 2 - rank-your-profile */}
+            <div className="group flex flex-col lg:flex-row-reverse gap-8 items-start">
+              <div className="flex-shrink-0 w-full lg:w-96 h-56 rounded-2xl overflow-hidden bg-gradient-to-br from-purple-50 to-pink-100 relative">
+                <Image 
+                  src="/lol.png" 
+                  alt="rank-your-profile banner" 
+                  fill 
+                  sizes="(max-width: 1024px) 100vw, 384px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
               </div>
-              
-              {/* Project Info */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-sans font-bold text-xl text-[#1d1d1f] tracking-tight">Next Project</h3>
-                  <div className="flex items-center gap-2 opacity-50">
-                    <div className="p-1.5 rounded-full bg-[#1d1d1f]/5">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div className="flex-1 space-y-6">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="font-sans font-bold text-2xl sm:text-3xl text-[#1d1d1f] group-hover:text-[#c84b2f] transition-colors">rank-your-profile</h3>
+                    <p className="text-[#6e6e73] text-base sm:text-lg leading-relaxed mt-4">
+                      Rank your profile in minutes. Quick and comprehensive profile analysis tool that provides instant insights and actionable feedback for improvement.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3 ml-6">
+                    <a 
+                      href="https://github.com/shubhranshu03" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-xl bg-[#1d1d1f]/10 hover:bg-[#1d1d1f]/20 transition-colors"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
                         <path d="M9 18c-4.51 2-5-2-7-2"/>
                       </svg>
-                    </div>
-                    <div className="p-1.5 rounded-full bg-[#1d1d1f]/5">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    </a>
+                    <a 
+                      href="https://www.rankyourprofile.lol/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-xl bg-[#1d1d1f]/10 hover:bg-[#1d1d1f]/20 transition-colors"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                         <polyline points="15,3 21,3 21,9"/>
                         <line x1="10" x2="21" y1="14" y2="3"/>
                       </svg>
-                    </div>
+                    </a>
                   </div>
                 </div>
-                
-                <p className="text-sm text-[#6e6e73] leading-relaxed">
-                  Something exciting is brewing. A new project that will showcase innovative solutions and cutting-edge design patterns.
-                </p>
-                
-                {/* Status Tag */}
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-[#c84b2f]/10 text-[#c84b2f] font-montserrat border border-[#c84b2f]/20">
-                    In Development
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="flex flex-wrap gap-2">
+                    {["React", "Node.js", "OpenAI", "Supabase"].map((tech) => (
+                      <span 
+                        key={tech} 
+                        className="text-xs font-medium px-3 py-1 rounded-full bg-[#1d1d1f]/8 text-[#1d1d1f] font-montserrat"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="px-4 py-2 bg-green-100 text-green-700 text-sm font-medium rounded-full border border-green-200 w-fit">
+                    Live
                   </span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Activity Heatmap */}
-        <div className="space-y-4 pt-10 border-t border-[#1d1d1f]/10">
-          <div className="space-y-1">
-            <p className="text-xs font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat">Build Activity · 2026</p>
-            <h2 className="font-serif text-3xl font-medium tracking-tight text-[#1d1d1f]">Days I shipped.</h2>
-          </div>
-          <ActivityGrid />
         </div>
 
         {/* Let's Work Together Section */}
