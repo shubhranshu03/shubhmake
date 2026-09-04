@@ -203,9 +203,9 @@ export default function Home() {
         </ul>
       </nav>
 
-      <div className="max-w-4xl w-full text-left space-y-8 sm:space-y-10 md:space-y-12 animate-fade-in">
+      <div className="w-full text-left space-y-8 sm:space-y-10 md:space-y-12 animate-fade-in">
         {/* Profile Section with Image and Name */}
-        <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
           {/* Profile Image (circular) */}
           <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-2 border-[#1d1d1f] shadow-md flex-shrink-0">
             <Image src="/shubhranshu.jpg" alt="Shubhranshu" fill sizes="(max-width: 640px) 80px, (max-width: 768px) 112px, 144px" className="object-cover" priority />
@@ -223,7 +223,7 @@ export default function Home() {
         </div>
 
         {/* Bio Text Group */}
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-3 sm:space-y-4 max-w-4xl mx-auto">
           <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-[#1d1d1f] font-normal leading-relaxed opacity-95 max-w-3xl">
             I build full products, front to back, and I'm annoyingly obsessive about the small details most people skip, the ones that quietly decide whether software actually feels good to use or just technically works.
           </p>
@@ -239,138 +239,47 @@ export default function Home() {
 
         {/* Featured Projects */}
         <div className="space-y-6 pt-10 border-t border-[#1d1d1f]/10">
-          <div className="space-y-1">
+          <div className="space-y-1 max-w-4xl mx-auto">
             <p className="text-xs font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat">Featured Projects</p>
             <h2 className="font-serif text-3xl font-medium tracking-tight text-[#1d1d1f]">What I've built.</h2>
           </div>
 
-          <div className="space-y-12 pt-4">
+          <div className="space-y-6 pt-4">
             {/* Project 1 - webstudioorg.net */}
-            <div className="group flex flex-col lg:flex-row gap-8 items-start">
-              <div className="flex-shrink-0 w-full lg:w-96 h-56 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 relative">
-                <Image 
-                  src="/p1.png" 
-                  alt="webstudioorg.net preview" 
-                  fill 
-                  sizes="(max-width: 1024px) 100vw, 384px"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
-              </div>
-              <div className="flex-1 space-y-6">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="font-sans font-bold text-2xl sm:text-3xl text-[#1d1d1f] group-hover:text-[#c84b2f] transition-colors">webstudioorg.net</h3>
-                    <p className="text-[#6e6e73] text-base sm:text-lg leading-relaxed mt-4">
-                      Turn ideas into websites, graphics, and marketing assets through simple prompts. A comprehensive design platform that bridges the gap between concept and creation.
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 ml-6">
-                    <a 
-                      href="https://github.com/shubhranshu03" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-[#1d1d1f]/10 hover:bg-[#1d1d1f]/20 transition-colors"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                        <path d="M9 18c-4.51 2-5-2-7-2"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="flex flex-wrap gap-2">
-                    {["Next.js", "React", "TypeScript", "Tailwind"].map((tech) => (
-                      <span 
-                        key={tech} 
-                        className="text-xs font-medium px-3 py-1 rounded-full bg-[#1d1d1f]/8 text-[#1d1d1f] font-montserrat"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="px-4 py-2 bg-[#c84b2f]/10 text-[#c84b2f] text-sm font-medium rounded-full border border-[#c84b2f]/20 w-fit">
-                    Live in 10 days
-                  </span>
-                </div>
-              </div>
+            <div className="space-y-3">
+              <h3 className="font-sans font-bold text-xl text-[#1d1d1f]">
+                <a href="https://webstudioorg.net" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
+                  webstudioorg.net
+                </a>
+              </h3>
+              <p className="text-[#6e6e73] text-base leading-relaxed">
+                Turn ideas into websites, graphics, and marketing assets through simple prompts.<br />
+                A comprehensive design platform that bridges the gap between concept and creation.
+              </p>
             </div>
 
-            {/* Divider Line */}
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-[#1d1d1f]/20 to-transparent"></div>
-
             {/* Project 2 - rank-your-profile */}
-            <div className="group flex flex-col lg:flex-row-reverse gap-8 items-start">
-              <div className="flex-shrink-0 w-full lg:w-96 h-56 rounded-2xl overflow-hidden bg-gradient-to-br from-purple-50 to-pink-100 relative">
-                <Image 
-                  src="/lol.png" 
-                  alt="rank-your-profile banner" 
-                  fill 
-                  sizes="(max-width: 1024px) 100vw, 384px"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
-              </div>
-              <div className="flex-1 space-y-6">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="font-sans font-bold text-2xl sm:text-3xl text-[#1d1d1f] group-hover:text-[#c84b2f] transition-colors">rank-your-profile</h3>
-                    <p className="text-[#6e6e73] text-base sm:text-lg leading-relaxed mt-4">
-                      Rank your profile in minutes. Quick and comprehensive profile analysis tool that provides instant insights and actionable feedback for improvement.
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 ml-6">
-                    <a 
-                      href="https://github.com/shubhranshu03" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-[#1d1d1f]/10 hover:bg-[#1d1d1f]/20 transition-colors"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                        <path d="M9 18c-4.51 2-5-2-7-2"/>
-                      </svg>
-                    </a>
-                    <a 
-                      href="https://www.rankyourprofile.lol/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-[#1d1d1f]/10 hover:bg-[#1d1d1f]/20 transition-colors"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                        <polyline points="15,3 21,3 21,9"/>
-                        <line x1="10" x2="21" y1="14" y2="3"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="flex flex-wrap gap-2">
-                    {["React", "Node.js", "OpenAI", "Supabase"].map((tech) => (
-                      <span 
-                        key={tech} 
-                        className="text-xs font-medium px-3 py-1 rounded-full bg-[#1d1d1f]/8 text-[#1d1d1f] font-montserrat"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="px-4 py-2 bg-green-100 text-green-700 text-sm font-medium rounded-full border border-green-200 w-fit">
-                    Live
-                  </span>
-                </div>
-              </div>
+            <div className="space-y-3">
+              <h3 className="font-sans font-bold text-xl text-[#1d1d1f]">
+                <a href="https://www.rankyourprofile.lol/" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
+                  rank-your-profile
+                </a>
+              </h3>
+              <p className="text-[#6e6e73] text-base leading-relaxed">
+                Rank your profile in minutes with comprehensive analysis and instant insights.<br />
+                Quick profile analysis tool that provides actionable feedback for improvement.
+              </p>
             </div>
           </div>
         </div>
 
         {/* Let's Work Together Section */}
         <div className="space-y-8 sm:space-y-10 pt-10 border-t border-[#1d1d1f]/10">
-          <div className="space-y-1">
+          <div className="space-y-1 max-w-4xl mx-auto">
             <p className="text-xs font-bold uppercase tracking-widest text-[#c84b2f] font-montserrat">Let's Work Together</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 max-w-4xl mx-auto">
             {/* Left Side - Get in Touch */}
             <div className="space-y-6">
               <div className="space-y-4">
@@ -490,7 +399,7 @@ export default function Home() {
         </div>
 
       {/* Footer */}
-        <div className="pt-16 border-t border-[#1d1d1f]/10 flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
+        <div className="pt-16 border-t border-[#1d1d1f]/10 flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 max-w-4xl mx-auto">
           {/* Copyright and Navigation */}
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
             <p className="text-sm text-[#6e6e73] font-medium">© 2026 Shubhranshu.</p>
@@ -545,7 +454,7 @@ export default function Home() {
         </div>
 
         {/* Closing Quote */}
-        <div className="pt-8 text-center">
+        <div className="pt-8 text-center max-w-4xl mx-auto">
           <p className="text-sm text-[#6e6e73]/90 font-serif italic max-w-sm mx-auto leading-relaxed">
             "You have the right to perform your duty, but not to the fruits of your actions."
           </p>
