@@ -245,29 +245,81 @@ export default function Home() {
           </div>
 
           <div className="space-y-6 pt-4">
-            {/* Project 1 - webstudioorg.net */}
+            {/* Project 1 - Grammarly */}
             <div className="space-y-3">
               <h3 className="font-sans font-bold text-xl text-[#1d1d1f]">
-                <a href="https://webstudioorg.net" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
-                  webstudioorg.net
+                <a href="https://grammarly.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
+                  Grammarly — Grammar & rewriting
                 </a>
               </h3>
               <p className="text-[#6e6e73] text-base leading-relaxed">
-                Turn ideas into websites, graphics, and marketing assets through simple prompts.<br />
-                A comprehensive design platform that bridges the gap between concept and creation.
+                Advanced AI-powered writing assistant that goes beyond basic spell-check to provide comprehensive grammar corrections, style improvements, and tone adjustments.<br />
+                Real-time suggestions help transform your writing with clarity enhancements, vocabulary recommendations, and plagiarism detection for professional communication.
               </p>
             </div>
 
-            {/* Project 2 - rank-your-profile */}
+            {/* Project 2 - QuillBot */}
             <div className="space-y-3">
               <h3 className="font-sans font-bold text-xl text-[#1d1d1f]">
-                <a href="https://www.rankyourprofile.lol/" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
-                  rank-your-profile
+                <a href="https://quillbot.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
+                  QuillBot — Paraphrasing
                 </a>
               </h3>
               <p className="text-[#6e6e73] text-base leading-relaxed">
-                Rank your profile in minutes with comprehensive analysis and instant insights.<br />
-                Quick profile analysis tool that provides actionable feedback for improvement.
+                Intelligent paraphrasing tool that rewrites and restructures text while preserving original meaning, offering multiple writing modes from formal to creative expressions.<br />
+                Features include synonym suggestions, grammar checking, and summarization capabilities to enhance content creation and academic writing workflows.
+              </p>
+            </div>
+
+            {/* Project 3 - Wordtune */}
+            <div className="space-y-3">
+              <h3 className="font-sans font-bold text-xl text-[#1d1d1f]">
+                <a href="https://wordtune.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
+                  Wordtune — Writing improvement
+                </a>
+              </h3>
+              <p className="text-[#6e6e73] text-base leading-relaxed">
+                AI-driven writing companion that suggests alternative phrasings and sentence structures to improve clarity, conciseness, and overall writing impact.<br />
+                Provides contextual rewrite suggestions that match your intended tone, whether casual, formal, or persuasive, helping you communicate ideas more effectively.
+              </p>
+            </div>
+
+            {/* Project 4 - Hemingway Editor */}
+            <div className="space-y-3">
+              <h3 className="font-sans font-bold text-xl text-[#1d1d1f]">
+                <a href="https://hemingwayapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
+                  Hemingway Editor — Readability
+                </a>
+              </h3>
+              <p className="text-[#6e6e73] text-base leading-relaxed">
+                Minimalist writing tool that highlights complex sentences, passive voice, and unnecessary adverbs to create bold, clear prose that resonates with readers.<br />
+                Color-coded feedback system identifies readability issues and provides actionable suggestions to simplify language while maintaining powerful, engaging content.
+              </p>
+            </div>
+
+            {/* Project 5 - ProWritingAid */}
+            <div className="space-y-3">
+              <h3 className="font-sans font-bold text-xl text-[#1d1d1f]">
+                <a href="https://prowritingaid.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
+                  ProWritingAid — Writing analysis
+                </a>
+              </h3>
+              <p className="text-[#6e6e73] text-base leading-relaxed">
+                Comprehensive writing mentor that combines grammar checking with in-depth style analysis, providing detailed reports on writing habits and improvement areas.<br />
+                Advanced features include pacing analysis, dialogue tags, sticky sentences detection, and manuscript-level insights for authors and professional writers.
+              </p>
+            </div>
+
+            {/* Project 6 - Rytr */}
+            <div className="space-y-3">
+              <h3 className="font-sans font-bold text-xl text-[#1d1d1f]">
+                <a href="https://rytr.me" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
+                  Rytr — AI writing
+                </a>
+              </h3>
+              <p className="text-[#6e6e73] text-base leading-relaxed">
+                Versatile AI writing assistant that generates high-quality content across multiple formats, from blog posts and emails to social media copy and product descriptions.<br />
+                Offers 40+ templates and use cases with customizable tone and creativity levels, empowering users to produce engaging content efficiently and cost-effectively.
               </p>
             </div>
           </div>
