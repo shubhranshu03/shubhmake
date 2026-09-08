@@ -5,6 +5,7 @@ import Image from "next/image";
 import { RandomizedTextEffect } from "./RandomizedTextEffect";
 import MusicPlayer from "./MusicPlayer";
 import ContactForm from "./ContactForm";
+import NewsletterSubscription from "./NewsletterSubscription";
 
 // Auto-generate active days from May 1 2026 to today
 function buildActiveDays(): Record<string, number> {
@@ -225,11 +226,14 @@ export default function Home() {
         {/* Bio Text Group */}
         <div className="space-y-3 sm:space-y-4 max-w-4xl mx-auto">
           <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-[#1d1d1f] font-normal leading-relaxed opacity-95 max-w-3xl">
-            I build full products, front to back, and I'm annoyingly obsessive about the small details most people skip, the ones that quietly decide whether software actually feels good to use or just technically works.
+            Building products solo, from idea to launch.
           </p>
           <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-[#1d1d1f] font-normal leading-relaxed opacity-95 max-w-3xl">
-            Currently living in TypeScript, React, Next.js, and Tailwind.
+            Sharing the journey along the way.
           </p>
+
+          {/* Newsletter Subscription */}
+          <NewsletterSubscription />
 
           {/* Spotify Music Player */}
           <div className="pt-4 pb-2">
@@ -244,31 +248,146 @@ export default function Home() {
             <h2 className="font-serif text-3xl font-medium tracking-tight text-[#1d1d1f]">What I've built.</h2>
           </div>
 
-          <div className="space-y-6 pt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
             {/* Project 1 - webstudioorg.net */}
-            <div className="space-y-3">
-              <h3 className="font-sans font-bold text-xl text-[#1d1d1f]">
-                <a href="https://webstudioorg.net" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
-                  webstudioorg.net
-                </a>
-              </h3>
-              <p className="text-[#6e6e73] text-base leading-relaxed">
-                Turn ideas into websites, graphics, and marketing assets through simple prompts.<br />
-                A comprehensive design platform that bridges the gap between concept and creation.
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-[#1d1d1f]/10 hover:border-[#c84b2f]/30 transition-all duration-300 hover:shadow-lg">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-white">
+                    <Image 
+                      src="/webstudio-logo.jpeg" 
+                      alt="WebStudio Logo" 
+                      width={48} 
+                      height={48} 
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-sans font-bold text-lg text-[#1d1d1f]">WebStudio</h3>
+                    <p className="text-sm text-[#6e6e73]">Design Platform</p>
+                  </div>
+                </div>
+                <div className="bg-[#1d1d1f]/8 px-3 py-1 rounded-lg">
+                  <span className="text-sm font-medium text-[#1d1d1f]">$0/mo</span>
+                </div>
+              </div>
+              
+              <p className="text-[#6e6e73] text-sm leading-relaxed mb-4">
+                Turn ideas into websites, graphics, and marketing assets through simple prompts. A comprehensive design platform that bridges the gap between concept and creation.
               </p>
+              
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs text-[#6e6e73]">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span>In Development</span>
+                </div>
+                <a 
+                  href="https://webstudioorg.net" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-[#c84b2f] hover:text-[#a03d2a] text-sm font-medium flex items-center gap-1 transition-colors"
+                >
+                  View Project
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 17L17 7"/>
+                    <path d="M7 7h10v10"/>
+                  </svg>
+                </a>
+              </div>
             </div>
 
             {/* Project 2 - rank-your-profile */}
-            <div className="space-y-3">
-              <h3 className="font-sans font-bold text-xl text-[#1d1d1f]">
-                <a href="https://www.rankyourprofile.lol/" target="_blank" rel="noopener noreferrer" className="hover:text-[#c84b2f] transition-colors">
-                  rank-your-profile
-                </a>
-              </h3>
-              <p className="text-[#6e6e73] text-base leading-relaxed">
-                Rank your profile in minutes with comprehensive analysis and instant insights.<br />
-                Quick profile analysis tool that provides actionable feedback for improvement.
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-[#1d1d1f]/10 hover:border-[#c84b2f]/30 transition-all duration-300 hover:shadow-lg">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-white">
+                    <Image 
+                      src="/rank.jpeg" 
+                      alt="Rank Your Profile Logo" 
+                      width={48} 
+                      height={48} 
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-sans font-bold text-lg text-[#1d1d1f]">RankYourProfile</h3>
+                    <p className="text-sm text-[#6e6e73]">Analysis Tool</p>
+                  </div>
+                </div>
+                <div className="bg-[#1d1d1f]/8 px-3 py-1 rounded-lg">
+                  <span className="text-sm font-medium text-[#1d1d1f]">$0/mo</span>
+                </div>
+              </div>
+              
+              <p className="text-[#6e6e73] text-sm leading-relaxed mb-4">
+                Rank your profile in minutes with comprehensive analysis and instant insights. Quick profile analysis tool that provides actionable feedback for improvement.
               </p>
+              
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs text-[#6e6e73]">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span>Live</span>
+                </div>
+                <a 
+                  href="https://www.rankyourprofile.lol/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-[#c84b2f] hover:text-[#a03d2a] text-sm font-medium flex items-center gap-1 transition-colors"
+                >
+                  View Project
+                  <svg xmlns="http://www.w3.org/2000/12" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 17L17 7"/>
+                    <path d="M7 7h10v10"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Project 3 - Can I Grok Bot It */}
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-[#1d1d1f]/10 hover:border-[#c84b2f]/30 transition-all duration-300 hover:shadow-lg">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-white">
+                    <Image 
+                      src="/logo.png" 
+                      alt="Can I Grok Bot It Logo" 
+                      width={48} 
+                      height={48} 
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-sans font-bold text-lg text-[#1d1d1f]">Can I Grok Bot It</h3>
+                    <p className="text-sm text-[#6e6e73]">SaaS Alternative</p>
+                  </div>
+                </div>
+                <div className="bg-[#1d1d1f]/8 px-3 py-1 rounded-lg">
+                  <span className="text-sm font-medium text-[#1d1d1f]">$0/mo</span>
+                </div>
+              </div>
+              
+              <p className="text-[#6e6e73] text-sm leading-relaxed mb-4">
+                Find SaaS tools you can replace with Grok Bots. Discover intelligent automation alternatives that can streamline your workflow and reduce subscription costs.
+              </p>
+              
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs text-[#6e6e73]">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span>Live</span>
+                </div>
+                <a 
+                  href="https://canigrokbotit.site" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-[#c84b2f] hover:text-[#a03d2a] text-sm font-medium flex items-center gap-1 transition-colors"
+                >
+                  View Project
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 17L17 7"/>
+                    <path d="M7 7h10v10"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
