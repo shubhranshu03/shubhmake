@@ -17,9 +17,6 @@ export default function About() {
           <li>
             <a href="/about" className="text-[#1d1d1f] transition-colors cursor-pointer">About</a>
           </li>
-          <li>
-            <a href="/skills" className="text-[#6e6e73] hover:text-[#1d1d1f] transition-colors cursor-pointer">Skills</a>
-          </li>
         </ul>
       </nav>
 
@@ -154,7 +151,6 @@ export default function About() {
             <nav className="flex items-center gap-4 sm:gap-6">
               <a href="/about" className="text-xs sm:text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">About</a>
               <a href="#" className="text-xs sm:text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Services</a>
-              <a href="/skills" className="text-xs sm:text-sm text-[#6e6e73] hover:text-[#1d1d1f] transition-colors font-medium">Skills</a>
             </nav>
           </div>
 
